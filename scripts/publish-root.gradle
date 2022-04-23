@@ -1,6 +1,6 @@
 ext["ossrhUsername"] = ''
 ext["ossrhPassword"] = ''
-ext["sonatypeStagingProfileId"] = 'io.github.dllewellyn'
+ext["sonatypeStagingProfileId"] = 'com.safetorun'
 ext["signing.keyId"] = ''
 ext["signing.password"] = ''
 ext["signing.secretKeyRingFile"] = ''
