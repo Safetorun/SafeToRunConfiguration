@@ -1,0 +1,26 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.5.10'
+    id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
+    id("org.jetbrains.dokka") version "1.6.10"
+}
+
+apply from: "${rootDir}/scripts/publish-root.gradle"
+
+ext {
+    PUBLISH_GROUP_ID = 'com.safetorun'
+    PUBLISH_VERSION = project['safeToRunVersion']
+    PUBLISH_ARTIFACT_ID = 'safeToRunConfiguration'
+}
+
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
+
+group 'com.safetorun'
+version project['safeToRunVersion']
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+}
