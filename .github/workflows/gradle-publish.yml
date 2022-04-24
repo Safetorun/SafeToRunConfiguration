@@ -28,7 +28,7 @@ jobs:
       uses: timheuer/base64-to-file@v1.1
       with:
         fileName: 'oss_signing_key.gpg'
-        fileDir: ''.'
+        fileDir: '.'
         encodedString: ${{ secrets.SIGNING_KEY }}
     - name: Publish
       env:
