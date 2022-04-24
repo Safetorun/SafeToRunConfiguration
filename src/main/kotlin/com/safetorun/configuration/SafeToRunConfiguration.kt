@@ -1,5 +1,7 @@
 package com.safetorun.configuration
 
+import com.safetorun.output.toJson
+
 /**
  * Safe to run configuration
  */
@@ -75,6 +77,6 @@ fun main() {
             }
         }
     }.let {
-        println(it)
+        println(it.toJson())
     }
 }
