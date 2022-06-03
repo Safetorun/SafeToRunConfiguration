@@ -3,6 +3,7 @@ package com.safetorun.configuration
 /**
  * Install origin check
  */
+@kotlinx.serialization.Serializable
 data class InstallOriginCheck(
     var allowedInstallOrigins: List<String> = emptyList(),
     var severity: Severity = Severity.None

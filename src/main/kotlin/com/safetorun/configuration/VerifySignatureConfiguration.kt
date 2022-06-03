@@ -3,6 +3,7 @@ package com.safetorun.configuration
 /**
  * Verify signature configuration
  */
+@kotlinx.serialization.Serializable
 data class VerifySignatureConfiguration(
     var allowedSignatures: List<String> = emptyList(),
     var severity: Severity = Severity.None

@@ -11,6 +11,7 @@ enum class CheckType {
     BannedModel
 }
 
+@kotlinx.serialization.Serializable
 data class SingleCheck(
     var intValue: Int? = null,
     var stringValue: String? = null,
@@ -18,6 +19,7 @@ data class SingleCheck(
     var checkUuid: String = ""
 )
 
+@kotlinx.serialization.Serializable
 data class OSCheckConfiguration(var configuration: List<SingleOSCheckConfiguration> = emptyList())
 
 fun List<SingleOSCheckConfiguration>.toCheckConfiguration() = OSCheckConfiguration(this)
@@ -25,11 +27,13 @@ fun List<SingleOSCheckConfiguration>.toCheckConfiguration() = OSCheckConfigurati
 /**
  * OS Check configuration
  */
+@kotlinx.serialization.Serializable
 data class SingleOSCheckConfiguration(
     var allChecks: List<SingleCheck> = emptyList(),
     var severity: Severity = Severity.None,
 )
 
+@kotlinx.serialization.Serializable
 class SingleOSCheckBuilder internal constructor() {
     var allChecks: List<SingleCheck> = emptyList()
     var severity: Severity = Severity.None

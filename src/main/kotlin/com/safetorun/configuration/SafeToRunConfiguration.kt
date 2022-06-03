@@ -5,6 +5,7 @@ import com.safetorun.output.toJson
 /**
  * Safe to run configuration
  */
+@kotlinx.serialization.Serializable
 data class SafeToRunConfiguration(
     val blacklistedAppCheck: List<BlacklistedAppConfiguration>,
     val verifySignatureConfiguration: List<VerifySignatureConfiguration>,

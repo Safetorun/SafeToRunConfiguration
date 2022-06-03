@@ -1,8 +1,7 @@
 package com.safetorun.output
 
-import com.google.gson.Gson
 import com.safetorun.configuration.SafeToRunConfiguration
+import kotlinx.serialization.json.Json
 
-private val gson = Gson()
 
-fun SafeToRunConfiguration.toJson(): String = gson.toJson(this)
+fun SafeToRunConfiguration.toJson(): String = Json.encodeToString(SafeToRunConfiguration.serializer(), this)

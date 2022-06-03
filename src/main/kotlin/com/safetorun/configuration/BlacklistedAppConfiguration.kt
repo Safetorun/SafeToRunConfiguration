@@ -3,6 +3,7 @@ package com.safetorun.configuration
 /**
  * Blacklisted app configuration
  */
+@kotlinx.serialization.Serializable
 data class BlacklistedAppConfiguration(
     var blacklistedApps: List<String> = emptyList(),
     var severity: Severity = Severity.None
