@@ -37,4 +37,10 @@ jobs:
         SIGNING_SECRET_KEY_RING_FILE: "oss_signing_key.gpg"
         SIGNING_KEY_ID: ${{ secrets.SIGNING_KEY_ID }}
         SIGNING_PASSWORD: ${{ secrets.SIGNING_PASSWORD }}
-      run: ./gradlew publish
+      run: ./gradlew build shadowJar publish 
+    - name: Publish GitHub Release Artifacts
+      uses: SierraSoftworks/gh-releases@v1.0.6
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        files: |
+          - build/libs/SafeToRunConfiguration-all-*.jar
