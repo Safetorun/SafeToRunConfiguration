@@ -1,4 +1,4 @@
-package com.safetorun.configuration
+package com.safetorun.resillience
 
 /**
  * Install origin check
